@@ -9,3 +9,5 @@ The first step of any data science project is to understand the dataset. The fir
 
 # Data Pre-Processing
 After looking through the dataset, it was time to pre-process the data. From the data analysis code, I created a correlation matrix, VIF table, and distribution graph of each varaible. These are crucial in understanding how the data needed to be transformed before being put into a model.
+![Correlation Matrix](correlation_matrix.png)
+![Varialbe Distributions](distributions_before.png)
