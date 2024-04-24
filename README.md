@@ -5,3 +5,4 @@ The goal of this project is to use housing data and neural networks to predict t
 I found the dataset on Kaggle, under the title "California Housing Prices." The dataset originates in the 1990 California census. Although it can't be used to extrapolate information about current housing prices, it is a good excersice in predicting housing prices at the time.
 
 # Analyzing the Dataset
+The first step of any data science project is to understand the dataset.
