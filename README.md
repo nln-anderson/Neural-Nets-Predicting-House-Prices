@@ -41,3 +41,5 @@ To get a better understanding of the results, I graphed the pairs of predicted v
 
 As you can see, there are a few outliers in which the model predicts their median value to be low, but the actual value is high.
 
+# Next Steps
+Although the model performs decently well, there are still options for improvement. In order to predict house prices more accurately, a dataset containing more information, such as ZIP code, average property age, etc, could help create a more accurate model. On the note of ZIP codes, I tried to feature-engineer this variable using the coordinates of the houses provided in the dataset. This can be found in the ZIP_code_feature_engineering.py file. It works decently well on the test coordinates provided, but takes about an hour to run on the actual dataset.
