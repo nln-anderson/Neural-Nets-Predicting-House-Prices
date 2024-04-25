@@ -10,14 +10,14 @@ The first step of any data science project is to understand the dataset. The fir
 # Data Pre-Processing
 After looking through the dataset, it was time to pre-process the data. From the data analysis code, I created a correlation matrix, VIF table, and distribution graph of each varaible. These are crucial in understanding how the data needed to be transformed before being put into a model.
 Correlation Matrix:
-![Correlation Matrix](correlation_matrix.png)
+![Correlation Matrix](graphs_images_tables/correlation_matrix.png)
 
 Distributions:
-![Varialbe Distributions](distributions_before.png)
+![Varialbe Distributions](graphs_images_tables/distributions_before.png)
 
 VIF Table:
 
-![Variance Inflation Factors](vif.png)
+![Variance Inflation Factors](graphs_images_tables/vif.png)
 
 Based on the correaltion matrix, the variables total_bedrooms and total_rooms were higly correlated. We should remove one of them, and to determine which one, I looked to the VIF table. Since total_bedrooms had a higher VIF value, meaning it is highly correlated with all the variables, I decided to remove it.
 
@@ -32,12 +32,12 @@ I used a 70/30 split of data into training and testing. I also used mim-max scal
 
 # Results
 Using the graph of the loss function, the model appeared to converge after about 150 epochs. 
-![Loss vs Epoch of the Model](loss_epoch_graph.png)
+![Loss vs Epoch of the Model](graphs_images_tables/loss_epoch_graph.png)
 
 The model was able to achieve an MAE value of 48264. In terms of interpretting this result, this meant the model's prediction was, on average, about $48,264 off of the actual median house value.
 
 To get a better understanding of the results, I graphed the pairs of predicted values and target values, seen here.
-![Predicted vs Actual](predictions_and_true_values.png)
+![Predicted vs Actual](graphs_images_tables/predictions_and_true_values.png)
 
 As you can see, there are a few outliers in which the model predicts their median value to be low, but the actual value is high.
 
