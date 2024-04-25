@@ -16,4 +16,8 @@ Distributions:
 VIF Table:
 ![Variance Inflation Factors](vif.png)
 
-Based on the correaltion matrix, the variables total_bedrooms and total_rooms were higly correlated. We should remove one of them, and to determine which one, I looked to the VIF table. Since total_bedrooms had a higher VIF value, meaning it is highly correlated with all the variables, I decided to remove it. 
+Based on the correaltion matrix, the variables total_bedrooms and total_rooms were higly correlated. We should remove one of them, and to determine which one, I looked to the VIF table. Since total_bedrooms had a higher VIF value, meaning it is highly correlated with all the variables, I decided to remove it.
+
+Next, I decided to do some feature engineering. Since population and total_rooms were highly correlated, I first thought to remove one or the other. Then I realized it would make sence to combine them into one variable of rooms per person, since this could represent a supply of housing. Finally, I dropped total_rooms since it was now represented in rooms_per_person. I performed a similar method for households.
+
+Finally, I wanted to remove the outliers and fix any distribution issues. Looking at the distributions, I removed any entries where the median age was above 50, houses were valued over 475,000, and houses on an island (since these are the few houses on Catalina, which can mess up our model later).
