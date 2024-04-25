@@ -11,9 +11,12 @@ The first step of any data science project is to understand the dataset. The fir
 After looking through the dataset, it was time to pre-process the data. From the data analysis code, I created a correlation matrix, VIF table, and distribution graph of each varaible. These are crucial in understanding how the data needed to be transformed before being put into a model.
 Correlation Matrix:
 ![Correlation Matrix](correlation_matrix.png)
+
 Distributions:
 ![Varialbe Distributions](distributions_before.png)
+
 VIF Table:
+
 ![Variance Inflation Factors](vif.png)
 
 Based on the correaltion matrix, the variables total_bedrooms and total_rooms were higly correlated. We should remove one of them, and to determine which one, I looked to the VIF table. Since total_bedrooms had a higher VIF value, meaning it is highly correlated with all the variables, I decided to remove it.
