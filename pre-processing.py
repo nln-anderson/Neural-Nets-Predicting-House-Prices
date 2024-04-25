@@ -46,5 +46,10 @@ df = df[df['housing_median_age'] <= 50]
 df = df[df['median_house_value'] <= 475000]
 df = df[df['ocean_proximity'] != 4]
 
+# Create new distribution chart
+df.hist(bins=100)
+plt.title("Distributions of Varaibles after Pre-Processing")
+plt.show()
+
 # Export the dataset
 df.to_csv("preprocessed_data.csv")
