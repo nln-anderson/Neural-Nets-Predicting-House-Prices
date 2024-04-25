@@ -34,7 +34,7 @@ X_train = scaler.fit_transform(X_train)
 X_test = scaler.fit_transform(X_test)
 
 # Create network
-network = sklearn.neural_network.MLPRegressor(solver= 'adam', hidden_layer_sizes=(5), verbose=True, learning_rate_init=0.1, max_iter=300)
+network = sklearn.neural_network.MLPRegressor(random_state=42, solver= 'adam', hidden_layer_sizes=(4), verbose=True, learning_rate_init=0.1, max_iter=300)
 
 # Train the network
 network.fit(X_train, y_train)
@@ -43,6 +43,7 @@ network.fit(X_train, y_train)
 predictions = network.predict(X_test)
 
 print(f"RMSE: {np.sqrt(sklearn.metrics.mean_squared_error(y_test, predictions))}")
+print(f"MAE: {sklearn.metrics.mean_absolute_error(y_test, predictions)}")
 
 # Print Loss Function
 pd.DataFrame(network.loss_curve_).plot()

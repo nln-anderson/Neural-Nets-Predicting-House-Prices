@@ -21,3 +21,20 @@ Based on the correaltion matrix, the variables total_bedrooms and total_rooms we
 Next, I decided to do some feature engineering. Since population and total_rooms were highly correlated, I first thought to remove one or the other. Then I realized it would make sence to combine them into one variable of rooms per person, since this could represent a supply of housing. Finally, I dropped total_rooms since it was now represented in rooms_per_person. I performed a similar method for households.
 
 Finally, I wanted to remove the outliers and fix any distribution issues. Looking at the distributions, I removed any entries where the median age was above 50, houses were valued over 475,000, and houses on an island (since these are the few houses on Catalina, which can mess up our model later).
+
+# Building the Network
+As noted in the title, I used a neural network to build the model. Specifically, I used a regressor neural network, meaning the final layer consisted of one node with no activation function, allowing for a continuous range of outputs. I decided on using 1 hidden layer with 5 nodes, since it about the average of the input layer (8 nodes) and output layer (1 node). This gave consistant convergence, so I stuck with it. For more information on the network, such as learning rate, see the model.py file.
+
+I used a 70/30 split of data into training and testing. I also used mim-max scaling on the data to assist with convergence of the model.
+
+# Results
+Using the graph of the loss function, the model appeared to converge after about 150 epochs. 
+![Loss vs Epoch of the Model](loss_epoch_graph.png)
+
+The model was able to achieve an MAE value of 48264. In terms of interpretting this result, this meant the model's prediction was, on average, about $48,264 off of the actual median house value.
+
+To get a better understanding of the results, I graphed the pairs of predicted values and target values, seen here.
+![Predicted vs Actual](predictions_and_true_values.png)
+
+As you can see, there are a few outliers in which the model predicts their median value to be low, but the actual value is high.
+
